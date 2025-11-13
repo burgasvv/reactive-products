@@ -71,4 +71,20 @@ class IdentityService : BaseService,
         return this.findEntity(id)
             .flatMap { identity -> this.identityMapper.identityRepository.delete(identity) }
     }
+
+    @Transactional(
+        isolation = Isolation.READ_COMMITTED, propagation = Propagation.REQUIRED,
+        rollbackFor = [Throwable::class, RuntimeException::class]
+    )
+    fun changePassword(identityId: UUID, newPassword: String): Mono<Void> {
+        return this.findEntity(identityId)
+            .flatMap { identity ->
+                if (this.identityMapper.passwordEncoder.matches(newPassword, identity.password)) {
+                    return@flatMap Mono.error { IllegalArgumentException("Passwords matched") }
+                }
+                identity.password = this.identityMapper.passwordEncoder.encode(newPassword)
+                return@flatMap this.identityMapper.identityRepository.save(identity)
+            }
+            .then()
+    }
 }

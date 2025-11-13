@@ -15,9 +15,10 @@ Accept: application/json
 Authorization: Basic burgasvv@gmail.com burgasvv
 
 ###
-GET /api/v1/identities/by-id?identityId=b40d51f1-1069-432e-b778-c753fa35495a
+GET /api/v1/identities/by-id?identityId=cf95f3b8-c8c6-41a2-9eee-7bd3b97aa6bb
 Host: localhost:9000
 Accept: application/json
+Authorization: Basic burgasvv@gmail.com burgasvv
 
 ###
 POST /api/v1/identities/create
@@ -35,13 +36,30 @@ X-Csrf-Token: qWZwQlCpygkHtsRTrRzwJbavZCNpqLmvWUSeDSmJeFQHwpF4mlBFIGLLrjsq0KJryD
 }
 
 ###
+POST /api/v1/identities/create
+Host: localhost:9000
+Accept: application/json
+Content-Type: application/json
+X-Csrf-Token: -brBaIHvIAbh9d44iDnhcWgVYV9WHy-9HnyfA9lQbhdBLZfknYKlWLmMQTLMkOcPuxTVRFsjTD5nKkuQLRivYe1gVnZ0HaLc
+
+{
+    "authority": "USER",
+    "username": "zagor",
+    "password": "zagor",
+    "email": "zagor@gmail.com",
+    "enabled": true
+}
+
+###
 PUT /api/v1/identities/update
 Host: localhost:9000
 Accept: application/json
 Content-Type: application/json
+Authorization: Basic zagor@gmail.com zagor
+X-Csrf-Token: zCbmUJO2h5aC-eg8qY4WBsAvgIOVMKApie2tG9TZlXrOHDyEqB6CYKvV5qKvnNELmqMiM_MZreKkBcQEuomdeeDprRv7LAm8
 
 {
-    "id": "b40d51f1-1069-432e-b778-c753fa35495a",
+    "id": "c8042d9d-7615-4111-b978-2e5cb51cdee2",
     "authority": "USER"
 }
 
@@ -49,3 +67,10 @@ Content-Type: application/json
 DELETE /api/v1/identities/delete?identityId=b40d51f1-1069-432e-b778-c753fa35495a
 Host: localhost:9000
 Accept: application/json
+
+###
+PUT /api/v1/identities/change-password?identityId=cf95f3b8-c8c6-41a2-9eee-7bd3b97aa6bb&newPassword=burgasvv
+Host: localhost:9000
+Accept: application/json
+Authorization: Basic burgasvv@gmail.com burgasvv111
+X-Csrf-Token: Hr15cImeaxADW6Y_I1vL5Yqe_uUnhKfUrWPAiuFHyI950vthL41MFr6vXnUuPZMIG3b_hOiv04cSs8X5y1H57IN-qe0dsJoF

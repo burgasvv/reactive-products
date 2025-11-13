@@ -15,7 +15,7 @@ import java.time.format.DateTimeFormatter
 class IdentityMapper : FullMapper<IdentityRequest, Identity, IdentityShortResponse, IdentityFullResponse> {
 
     final val identityRepository: IdentityRepository
-    private final val passwordEncoder: PasswordEncoder
+    final val passwordEncoder: PasswordEncoder
 
     constructor(identityRepository: IdentityRepository, passwordEncoder: PasswordEncoder) {
         this.identityRepository = identityRepository

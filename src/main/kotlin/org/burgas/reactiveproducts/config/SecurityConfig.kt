@@ -48,7 +48,8 @@ class SecurityConfig {
                     .permitAll()
 
                     .pathMatchers(
-                        "/api/v1/identities/by-id", "/api/v1/identities/update", "/api/v1/identities/delete"
+                        "/api/v1/identities/by-id", "/api/v1/identities/update", "/api/v1/identities/delete",
+                        "/api/v1/identities/change-password"
                     )
                     .hasAnyAuthority(Authority.ADMIN.authority, Authority.USER.authority)
 
