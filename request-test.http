@@ -1,4 +1,7 @@
-
+###
+GET /api/v1/security/csrf-token
+Host: localhost:9000
+Accept: application/json
 
 
 ### Identity Requests
@@ -9,9 +12,10 @@
 GET /api/v1/identities
 Host: localhost:9000
 Accept: application/json
+Authorization: Basic burgasvv@gmail.com burgasvv
 
 ###
-GET /api/v1/identities/by-id?identityId=85f4dff0-53ab-4ea7-86e9-59b6c50990ed
+GET /api/v1/identities/by-id?identityId=b40d51f1-1069-432e-b778-c753fa35495a
 Host: localhost:9000
 Accept: application/json
 
@@ -20,6 +24,7 @@ POST /api/v1/identities/create
 Host: localhost:9000
 Accept: application/json
 Content-Type: application/json
+X-Csrf-Token: qWZwQlCpygkHtsRTrRzwJbavZCNpqLmvWUSeDSmJeFQHwpF4mlBFIGLLrjsq0KJryDHER9SWSUJYmI2CbXb9OBy-HGQ286RM
 
 {
     "authority": "ADMIN",
@@ -36,11 +41,11 @@ Accept: application/json
 Content-Type: application/json
 
 {
-    "id": "85f4dff0-53ab-4ea7-86e9-59b6c50990ed",
+    "id": "b40d51f1-1069-432e-b778-c753fa35495a",
     "authority": "USER"
 }
 
 ###
-DELETE /api/v1/identities/delete?identityId=85f4dff0-53ab-4ea7-86e9-59b6c50990ed
+DELETE /api/v1/identities/delete?identityId=b40d51f1-1069-432e-b778-c753fa35495a
 Host: localhost:9000
 Accept: application/json

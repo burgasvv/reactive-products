@@ -15,7 +15,7 @@ class Identity : Entity {
     override lateinit var id: UUID
 
     @Column(value = "authority")
-    lateinit var authority: String
+    lateinit var authority: Authority
 
     @Column(value = "username")
     lateinit var username: String

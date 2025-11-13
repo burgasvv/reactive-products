@@ -9,5 +9,5 @@ import java.util.UUID
 @Repository
 interface IdentityRepository : R2dbcRepository<Identity, UUID> {
 
-    override fun findById(id: UUID): Mono<Identity>
+    fun findIdentityByEmail(email: String): Mono<Identity>
 }

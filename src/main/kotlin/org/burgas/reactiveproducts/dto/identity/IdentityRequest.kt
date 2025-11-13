@@ -6,7 +6,7 @@ import java.util.UUID
 
 data class IdentityRequest(
     override var id: UUID?,
-    val authority: String?,
+    val authority: Authority?,
     val username: String?,
     val password: String?,
     val email: String?,

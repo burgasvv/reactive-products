@@ -1,6 +1,10 @@
 package org.burgas.reactiveproducts.entity.identity
 
-enum class Authority {
+import org.springframework.security.core.GrantedAuthority
 
-    ADMIN, USER
+enum class Authority : GrantedAuthority {
+
+    ADMIN, USER;
+
+    override fun getAuthority(): String? = this.name
 }
