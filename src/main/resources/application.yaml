@@ -1,0 +1,21 @@
+
+server:
+  port: 9000
+spring:
+  application:
+    name: reactive-products
+  r2dbc:
+    url: r2dbc:postgresql://localhost:6000/reactive_products_db
+    username: postgres
+    password: postgres
+    pool:
+      initial-size: 10
+      max-size: 20
+  liquibase:
+    url: jdbc:postgresql://localhost:6000/reactive_products_db
+    user: postgres
+    password: postgres
+logging:
+  level:
+    io.r2dbc.postgresql.QUERY: DEBUG
+    org.springframework.transaction.interceptor: TRACE
