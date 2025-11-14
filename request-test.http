@@ -123,3 +123,71 @@ Host: localhost:9000
 Accept: application/json
 Authorization: Basic burgasvv@gmail.com burgasvv
 X-Csrf-Token: drh0VcUvqfmsqwXzjRNyoJnRt0GTXAMnlGPmOg2hsbPy6PM5E9sQNvUWz8GBkzKVvz5Gk6DkmiPwaTcK9wDWCzyYgoHA35Ba
+
+
+
+### Product Requests
+
+
+
+###
+GET /api/v1/products
+Host: localhost:9000
+Accept: application/json
+
+###
+POST /api/v1/products/create
+Host: localhost:9000
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic burgasvv@gmail.com burgasvv
+X-Csrf-Token: Q_ShbAClMLaDAfgadUON7bbFE1CMfJCedLwSq2mbPBwoSx9hJ5XFCWPHBI6uOM8jRW65joHwPmm7S_KzF98gmVj4CCwQLi9V
+
+{
+    "categoryId": "fb76bfe2-f391-41ee-bb25-fc0b9fceb8f4",
+    "name": "Домик в Деревне сметана",
+    "description": "Описание продукта Домик в Деревне сметана",
+    "price": 89.5
+}
+
+###
+PUT /api/v1/products/update
+Host: localhost:9000
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic burgasvv@gmail.com burgasvv
+X-Csrf-Token: zSv-DSRaxea5klA2pMfOUpQix_rqJ-QrOR5wSiKRGEyl2oVWqUqaaEc48d6Uq2cPlOr6MaMX6sPdEIYGWn1CeBPyLHydv7Vi
+
+{
+    "id": "3317404b-90e7-467d-87a0-0dd55c3adb86",
+    "price": 98.8
+}
+
+
+
+### Store Requests
+
+
+
+###
+GET /api/v1/stores
+Host: localhost:9000
+Accept: application/json
+
+###
+GET /api/v1/stores/by-id?storeId=bc6239ba-20c2-4ffd-9053-869170ee0a4a
+Host: localhost:9000
+Accept: application/json
+
+###
+POST /api/v1/stores/create
+Host: localhost:9000
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic burgasvv@gmail.com burgasvv
+X-Csrf-Token: Pu9DHo9_Dcio9NxlH-JHy50wZkXe3d17k4vbAfkdisDWQmn9XNxxLuxLaK2FwORTJ89zqq1USyfo7-pW97jqMZh-vPTgc1rN
+
+{
+    "name": "Магнит",
+    "address": "Адрес магазина Магнит на Твардовского"
+}

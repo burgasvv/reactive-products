@@ -45,7 +45,11 @@ class SecurityConfig {
 
                         "/api/v1/identities/create",
 
-                        "/api/v1/categories", "/api/v1/categories/by-id"
+                        "/api/v1/categories", "/api/v1/categories/by-id",
+
+                        "/api/v1/products", "/api/v1/products/by-id",
+
+                        "/api/v1/stores", "/api/v1/stores/by-id"
                     )
                     .permitAll()
 
@@ -58,7 +62,11 @@ class SecurityConfig {
                     .pathMatchers(
                         "/api/v1/identities",
 
-                        "/api/v1/categories/create", "/api/v1/categories/update", "/api/v1/categories/delete"
+                        "/api/v1/categories/create", "/api/v1/categories/update", "/api/v1/categories/delete",
+
+                        "/api/v1/products/create", "/api/v1/products/update", "/api/v1/products/delete",
+
+                        "/api/v1/stores/create", "/api/v1/stores/update", "/api/v1/stores/delete"
                     )
                     .hasAnyAuthority(Authority.ADMIN.authority)
             }
