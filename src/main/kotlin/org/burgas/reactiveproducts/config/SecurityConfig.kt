@@ -1,7 +1,7 @@
 package org.burgas.reactiveproducts.config
 
 import org.burgas.reactiveproducts.entity.identity.Authority
-import org.burgas.reactiveproducts.service.CustomUserDetailsService
+import org.burgas.reactiveproducts.service.IdentityDetailsService
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.security.authentication.ReactiveAuthenticationManager
@@ -18,16 +18,16 @@ import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource
 class SecurityConfig {
 
     private final val passwordEncoder: PasswordEncoder
-    private final val customUserDetailsService: CustomUserDetailsService
+    private final val identityDetailsService: IdentityDetailsService
 
-    constructor(passwordEncoder: PasswordEncoder, customUserDetailsService: CustomUserDetailsService) {
+    constructor(passwordEncoder: PasswordEncoder, identityDetailsService: IdentityDetailsService) {
         this.passwordEncoder = passwordEncoder
-        this.customUserDetailsService = customUserDetailsService
+        this.identityDetailsService = identityDetailsService
     }
 
     @Bean
     fun reactiveAuthenticationManager(): ReactiveAuthenticationManager {
-        val authenticationManager = UserDetailsRepositoryReactiveAuthenticationManager(this.customUserDetailsService)
+        val authenticationManager = UserDetailsRepositoryReactiveAuthenticationManager(this.identityDetailsService)
         authenticationManager.setPasswordEncoder(this.passwordEncoder)
         return authenticationManager
     }
@@ -43,7 +43,9 @@ class SecurityConfig {
                     .pathMatchers(
                         "/api/v1/security/csrf-token",
 
-                        "/api/v1/identities/create"
+                        "/api/v1/identities/create",
+
+                        "/api/v1/categories", "/api/v1/categories/by-id"
                     )
                     .permitAll()
 
@@ -54,7 +56,9 @@ class SecurityConfig {
                     .hasAnyAuthority(Authority.ADMIN.authority, Authority.USER.authority)
 
                     .pathMatchers(
-                        "/api/v1/identities"
+                        "/api/v1/identities",
+
+                        "/api/v1/categories/create", "/api/v1/categories/update", "/api/v1/categories/delete"
                     )
                     .hasAnyAuthority(Authority.ADMIN.authority)
             }

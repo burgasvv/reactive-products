@@ -1,4 +1,4 @@
-package org.burgas.reactiveproducts.service
+package org.burgas.reactiveproducts.service.contract
 
 import org.burgas.reactiveproducts.dto.Request
 import org.burgas.reactiveproducts.dto.Response

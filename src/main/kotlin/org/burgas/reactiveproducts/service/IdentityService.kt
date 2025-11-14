@@ -5,6 +5,8 @@ import org.burgas.reactiveproducts.dto.identity.IdentityRequest
 import org.burgas.reactiveproducts.dto.identity.IdentityShortResponse
 import org.burgas.reactiveproducts.entity.identity.Identity
 import org.burgas.reactiveproducts.mapper.IdentityMapper
+import org.burgas.reactiveproducts.service.contract.BaseService
+import org.burgas.reactiveproducts.service.contract.CrudService
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Isolation
 import org.springframework.transaction.annotation.Propagation
@@ -44,9 +46,7 @@ class IdentityService : BaseService,
         rollbackFor = [Throwable::class, RuntimeException::class]
     )
     override fun create(entityRequestMono: Mono<IdentityRequest>): Mono<Void> {
-        return entityRequestMono.flatMap { identityRequest ->
-            this.identityMapper.toEntityCreate(Mono.fromCallable { identityRequest })
-        }
+        return this.identityMapper.toEntityCreate(entityRequestMono)
             .flatMap { identity -> this.identityMapper.identityRepository.save(identity) }
             .then()
     }
@@ -56,9 +56,7 @@ class IdentityService : BaseService,
         rollbackFor = [Throwable::class, RuntimeException::class]
     )
     override fun update(entityRequestMono: Mono<IdentityRequest>): Mono<Void> {
-        return entityRequestMono.flatMap { identityRequest ->
-            this.identityMapper.toEntityUpdate(Mono.fromCallable { identityRequest })
-        }
+        return this.identityMapper.toEntityUpdate(entityRequestMono)
             .flatMap { identity -> this.identityMapper.identityRepository.save(identity) }
             .then()
     }

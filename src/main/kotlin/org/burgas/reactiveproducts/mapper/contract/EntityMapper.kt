@@ -1,4 +1,4 @@
-package org.burgas.reactiveproducts.mapper
+package org.burgas.reactiveproducts.mapper.contract
 
 import org.burgas.reactiveproducts.dto.Request
 import org.burgas.reactiveproducts.entity.Entity

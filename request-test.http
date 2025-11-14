@@ -74,3 +74,52 @@ Host: localhost:9000
 Accept: application/json
 Authorization: Basic burgasvv@gmail.com burgasvv111
 X-Csrf-Token: Hr15cImeaxADW6Y_I1vL5Yqe_uUnhKfUrWPAiuFHyI950vthL41MFr6vXnUuPZMIG3b_hOiv04cSs8X5y1H57IN-qe0dsJoF
+
+
+
+### Category Requests
+
+
+
+###
+GET /api/v1/categories
+Host: localhost:9000
+Accept: application/json
+
+###
+GET /api/v1/categories/by-id?categoryId=fb76bfe2-f391-41ee-bb25-fc0b9fceb8f4
+Host: localhost:9000
+Accept: application/json
+
+###
+POST /api/v1/categories/create
+Host: localhost:9000
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic burgasvv@gmail.com burgasvv
+X-Csrf-Token: drh0VcUvqfmsqwXzjRNyoJnRt0GTXAMnlGPmOg2hsbPy6PM5E9sQNvUWz8GBkzKVvz5Gk6DkmiPwaTcK9wDWCzyYgoHA35Ba
+
+{
+    "name": "Море-продукты",
+    "description": "Описание категории Море-продукты"
+}
+
+###
+PUT /api/v1/categories/update
+Host: localhost:9000
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic burgasvv@gmail.com burgasvv
+X-Csrf-Token: drh0VcUvqfmsqwXzjRNyoJnRt0GTXAMnlGPmOg2hsbPy6PM5E9sQNvUWz8GBkzKVvz5Gk6DkmiPwaTcK9wDWCzyYgoHA35Ba
+
+{
+    "id": "4726fc8e-94ef-47c3-80e4-c987dfba7872",
+    "name": "Море-продукты из Владивостока"
+}
+
+###
+DELETE /api/v1/categories/delete?categoryId=4726fc8e-94ef-47c3-80e4-c987dfba7872
+Host: localhost:9000
+Accept: application/json
+Authorization: Basic burgasvv@gmail.com burgasvv
+X-Csrf-Token: drh0VcUvqfmsqwXzjRNyoJnRt0GTXAMnlGPmOg2hsbPy6PM5E9sQNvUWz8GBkzKVvz5Gk6DkmiPwaTcK9wDWCzyYgoHA35Ba

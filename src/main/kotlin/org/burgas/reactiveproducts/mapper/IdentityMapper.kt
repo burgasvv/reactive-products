@@ -4,6 +4,7 @@ import org.burgas.reactiveproducts.dto.identity.IdentityFullResponse
 import org.burgas.reactiveproducts.dto.identity.IdentityRequest
 import org.burgas.reactiveproducts.dto.identity.IdentityShortResponse
 import org.burgas.reactiveproducts.entity.identity.Identity
+import org.burgas.reactiveproducts.mapper.contract.FullMapper
 import org.burgas.reactiveproducts.repository.IdentityRepository
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Component

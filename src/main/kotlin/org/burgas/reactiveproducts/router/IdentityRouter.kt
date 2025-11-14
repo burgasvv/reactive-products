@@ -4,6 +4,7 @@ import org.burgas.reactiveproducts.dto.identity.IdentityFullResponse
 import org.burgas.reactiveproducts.dto.identity.IdentityRequest
 import org.burgas.reactiveproducts.dto.identity.IdentityShortResponse
 import org.burgas.reactiveproducts.entity.identity.IdentityDetails
+import org.burgas.reactiveproducts.router.contract.Router
 import org.burgas.reactiveproducts.service.IdentityService
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

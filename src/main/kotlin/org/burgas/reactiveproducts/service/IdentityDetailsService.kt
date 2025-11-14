@@ -11,7 +11,7 @@ import reactor.core.publisher.Mono
 
 @Service
 @Transactional(readOnly = true, propagation = Propagation.NOT_SUPPORTED)
-class CustomUserDetailsService : ReactiveUserDetailsService {
+class IdentityDetailsService : ReactiveUserDetailsService {
 
     private final val identityRepository: IdentityRepository
 

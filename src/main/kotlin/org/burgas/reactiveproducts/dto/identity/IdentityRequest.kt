@@ -5,7 +5,7 @@ import org.burgas.reactiveproducts.entity.identity.Authority
 import java.util.UUID
 
 data class IdentityRequest(
-    override var id: UUID?,
+    override val id: UUID?,
     val authority: Authority?,
     val username: String?,
     val password: String?,

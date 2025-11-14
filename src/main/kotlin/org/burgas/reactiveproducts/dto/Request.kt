@@ -4,5 +4,5 @@ import java.util.UUID
 
 interface Request {
 
-    var id: UUID?
+    val id: UUID?
 }
