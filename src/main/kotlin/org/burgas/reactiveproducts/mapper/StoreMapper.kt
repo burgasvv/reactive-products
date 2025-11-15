@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component
 import reactor.core.publisher.Mono
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.util.UUID
+import java.util.*
 
 @Component
 class StoreMapper : FullMapper<StoreRequest, Store, StoreShortResponse, StoreFullResponse> {

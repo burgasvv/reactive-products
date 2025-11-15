@@ -136,6 +136,11 @@ Host: localhost:9000
 Accept: application/json
 
 ###
+GET /api/v1/products/by-id?productId=422ac8f2-0241-4705-b4ca-74992b7fd3ae
+Host: localhost:9000
+Accept: application/json
+
+###
 POST /api/v1/products/create
 Host: localhost:9000
 Accept: application/json
@@ -191,3 +196,63 @@ X-Csrf-Token: Pu9DHo9_Dcio9NxlH-JHy50wZkXe3d17k4vbAfkdisDWQmn9XNxxLuxLaK2FwORTJ8
     "name": "Магнит",
     "address": "Адрес магазина Магнит на Твардовского"
 }
+
+
+
+### Store Product Requests
+
+
+
+###
+POST /api/v1/store-product/add-products
+Host: localhost:9000
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic burgasvv@gmail.com burgasvv
+X-Csrf-Token: geULRnlGrr6E1P_9Jo_NpU26mmNjGaSZ0bcP3oXJwDoGKm5huIEyfklzmN2p7ZyfQqL5kiyCt1sBLJK044Q57b2q8w4-SFlY
+
+[
+    {
+        "storeId": "bc6239ba-20c2-4ffd-9053-869170ee0a4a",
+        "productId": "422ac8f2-0241-4705-b4ca-74992b7fd3ae",
+        "amount": 90
+    },
+    {
+        "storeId": "bc6239ba-20c2-4ffd-9053-869170ee0a4a",
+        "productId": "3317404b-90e7-467d-87a0-0dd55c3adb86",
+        "amount": 80
+    }
+]
+
+###
+PUT /api/v1/store-product/change-amount
+Host: localhost:9000
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic burgasvv@gmail.com burgasvv
+X-Csrf-Token: AqX28pxbcL7mHFNrl40xzRImpHC8Xv2r1fa_kqeI38B-cLngM8OSxahpQYzLemMOpqAF_SQXiUjYPcyGtpSH8Z_p7qMaQIrQ
+
+{
+    "storeId": "bc6239ba-20c2-4ffd-9053-869170ee0a4a",
+    "productId": "3317404b-90e7-467d-87a0-0dd55c3adb86",
+    "amount": 90
+}
+
+###
+DELETE /api/v1/store-product/remove-products
+Host: localhost:9000
+Accept: application/json
+Content-Type: application/json
+Authorization: Basic burgasvv@gmail.com burgasvv
+X-Csrf-Token: SkqXz1jycw6xb4FQk1VELX0Ly_8tfu3tTe811NmIM1PleoDbfnul_GrCFzicXeRlonhwHU845scbGNrAKdcA5OzsBWPXT7Hs
+
+[
+    {
+        "storeId": "bc6239ba-20c2-4ffd-9053-869170ee0a4a",
+        "productId": "422ac8f2-0241-4705-b4ca-74992b7fd3ae"
+    },
+    {
+        "storeId": "bc6239ba-20c2-4ffd-9053-869170ee0a4a",
+        "productId": "3317404b-90e7-467d-87a0-0dd55c3adb86"
+    }
+]

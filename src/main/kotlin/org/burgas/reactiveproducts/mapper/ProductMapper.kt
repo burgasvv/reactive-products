@@ -15,7 +15,7 @@ import reactor.kotlin.core.util.function.component1
 import reactor.kotlin.core.util.function.component2
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-import java.util.UUID
+import java.util.*
 
 @Component
 class ProductMapper : FullMapper<ProductRequest, Product, ProductShortResponse, ProductFullResponse> {

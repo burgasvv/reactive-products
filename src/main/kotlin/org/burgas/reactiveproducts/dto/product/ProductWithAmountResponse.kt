@@ -12,5 +12,5 @@ data class ProductWithAmountResponse(
     val price: Double?,
     val createdAt: String?,
     val updatedAt: String?,
-    val amount: Double?
+    val amount: Long?
 ) : Response

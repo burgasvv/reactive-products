@@ -9,5 +9,5 @@ data class StoreWithAmountResponse(
     val address: String?,
     val createdAt: String?,
     val updatedAt: String?,
-    val amount: Double?
+    val amount: Long?
 ) : Response

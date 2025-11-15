@@ -66,7 +66,10 @@ class SecurityConfig {
 
                         "/api/v1/products/create", "/api/v1/products/update", "/api/v1/products/delete",
 
-                        "/api/v1/stores/create", "/api/v1/stores/update", "/api/v1/stores/delete"
+                        "/api/v1/stores/create", "/api/v1/stores/update", "/api/v1/stores/delete",
+
+                        "/api/v1/store-product/add-products", "/api/v1/store-product/remove-products",
+                        "/api/v1/store-product/change-amount"
                     )
                     .hasAnyAuthority(Authority.ADMIN.authority)
             }

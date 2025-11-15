@@ -1,8 +1,10 @@
 package org.burgas.reactiveproducts.entity.store
 
+import org.springframework.data.annotation.Id
 import org.springframework.data.relational.core.mapping.Column
+import org.springframework.data.relational.core.mapping.Embedded
 import org.springframework.data.relational.core.mapping.Table
-import java.util.*
+import java.util.UUID
 
 @Table(name = "store_product", schema = "public")
 class StoreProduct {
@@ -14,7 +16,7 @@ class StoreProduct {
     lateinit var productId: UUID
 
     @Column(value = "amount")
-    var amount: Double = 0.0
+    var amount: Long = 0
 
     constructor()
 }
