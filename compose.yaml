@@ -14,5 +14,17 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
 
+  reactive-products:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    ports:
+      - "9000:9000"
+    environment:
+      SPRING_R2DBC_URL: r2dbc:postgresql://postgres:5432/reactive_products_db
+
 volumes:
   postgres_data:
