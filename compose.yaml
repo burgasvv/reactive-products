@@ -6,7 +6,7 @@ services:
     container_name: reactive_products_postgres
     restart: unless-stopped
     ports:
-      - "6000:5432"
+      - "5432:5432"
     environment:
       POSTGRES_USERNAME: postgres
       POSTGRES_PASSWORD: postgres
@@ -25,6 +25,8 @@ services:
       - "9000:9000"
     environment:
       SPRING_R2DBC_URL: r2dbc:postgresql://postgres:5432/reactive_products_db
+      SPRING_R2DBC_USERNAME: postgres
+      SPRING_R2BDC_PASSWORD: postgres
 
 volumes:
   postgres_data:
